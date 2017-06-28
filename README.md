@@ -1,25 +1,28 @@
-# ReduxSimpleStarter
+# Redux Weather App
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+This is a repo for tracking my steps in the Modern React with Redux Udemy course by Stephen Grider.
 
-### Getting Started
+For this excersize I am going to create React Single Page Application, that will communicate with a Redux Blog Post API (http://reduxblog.herokuapp.com/) and will give the user the possibility to use the site as if it was a multiple page application.
 
-There are two methods for getting started with this repo.
+## Current state
+Under contruction...
 
-#### Familiar with Git?
+## ScreenShots
+- to be shot...
+
+## Applying new functionalities
+I am learning some new things by following this course. A little summary:
+- react-router-dom <BrowserRouter> & <Route />
+Using React Router to make use of Routes within the react application
+
+-
+## Familiar with Git?
 Checkout this repo, install dependencies, then start the gulp process with the following:
-
 ```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
+> git clone git@github.com:Winkeltje84/ReactRouterReduxForm.git
+> cd ReactRouterReduxForm
 > npm install
 > npm start
-```
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-> npm install
-> npm start
+Go to your [localhost](http://localhost:8080) on port 8080(default)
 ```
