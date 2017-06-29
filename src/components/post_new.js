@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { Field, reduxForm } from 'redux-form'
+
 class PostNew extends Component {
   render() {
     return (
@@ -8,11 +10,19 @@ class PostNew extends Component {
           <Link className="btn btn-primary" to="/">
             Back to Index
           </Link>
+        <form>
+          <Field
+            name="title"
+            component="input"
+            type="text"
+            placeholder="title of post"
+          />
+        </form>
+
         </div>
-        PostNew!
       </div>
     )
   }
 }
 
-export default PostNew
+export default reduxForm({ form: 'PostNewForm' })(PostNew)
