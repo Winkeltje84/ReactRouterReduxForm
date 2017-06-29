@@ -2,10 +2,8 @@ import { FETCH_POSTS } from '../actions/index'
 import _ from 'lodash'
 
 export default function(state = {}, action) {
-  console.log('state before reducer: ', state)
   switch (action.type) {
     case FETCH_POSTS:
-      console.log("will this work?")
       const new_state =  _.mapKeys(action.payload.data, 'id')
       // this lodash function iterates over object and places its 'id' key value
       // as the key of every instance:
