@@ -11,7 +11,7 @@ class PostNew extends Component {
           className="form-control"
           {...field.input}
           type="text"
-          placeholder="title of post"
+          placeholder={field.placeholder}
         />
       </div>
     )
@@ -30,13 +30,20 @@ class PostNew extends Component {
             name="title"
             label="Title"
             component={this.renderField}
+            placeholder="Title"
 
           />
           <Field
-            name="tags"
-            label="Tags"
+            name="categories"
+            label="Categories"
             component={this.renderField}
-
+            placeholder="Categories"
+          />
+          <Field
+            name="content"
+            label="Post content"
+            component={this.renderField}
+            placeholder="Content"
           />
         </form>
       </div>
