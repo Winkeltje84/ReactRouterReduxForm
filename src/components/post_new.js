@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { Field, reduxForm } from 'redux-form'
 
 class PostNew extends Component {
-  renderTitleField(field) {
+  renderField(field) {
     return (
       <div className="form-group">
-        <label>Title</label>
+        <label>{field.label}</label>
         <input
           className="form-control"
           {...field.input}
@@ -28,7 +28,15 @@ class PostNew extends Component {
         <form>
           <Field
             name="title"
-            component={this.renderTitleField}
+            label="Title"
+            component={this.renderField}
+
+          />
+          <Field
+            name="tags"
+            label="Tags"
+            component={this.renderField}
+
           />
         </form>
       </div>
