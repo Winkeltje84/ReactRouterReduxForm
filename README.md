@@ -15,7 +15,10 @@ I am learning some new things by following this course. A little summary:
 - react-router-dom <BrowserRouter> & <Route />
 Using React Router to make use of Routes within the react application
 
--
+- Redux Form
+http://redux-form.com/
+Using Redux Form to create a form for adding new posts
+
 ## Familiar with Git?
 Checkout this repo, install dependencies, then start the gulp process with the following:
 ```
