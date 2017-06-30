@@ -13,6 +13,7 @@ class PostNew extends Component {
           type="text"
           placeholder={field.placeholder}
         />
+        <p style={{color:'red'}}>{field.meta.error}</p>
       </div>
     )
   }
@@ -52,7 +53,25 @@ class PostNew extends Component {
 }
 
 function validate(values) {
-  console.log(values)
+  // console.log(values) --> {title: "test", categories: "test categories", content: "test content"}
+  const errors = {};
+
+  if (!values.title) {
+    errors.title = "Please enter a title";
+  }
+  else if (values.title.length < 5) {
+    errors.title = "The title must be at least 5 characters long"
+  }
+  if (!values.categories) {
+    errors.categories = "Please enter one or more categories";
+  }
+  if(!values.content) {
+    errors.content = "Please enter some content";
+  }
+
+  return errors;
+  // if errors is empty object, the form is fine to submit
+  // if errors has *any* properties, redux form assumes form is invalid
 }
 
 export default reduxForm({
