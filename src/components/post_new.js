@@ -18,15 +18,23 @@ class PostNew extends Component {
     )
   }
 
+  onSubmit(values) {
+    console.log(values);
+  }
+
   render() {
+    const { handleSubmit } = this.props;
+    // handleSubmit can be added from the props which have become available from
+    // redux-form that has been 'connected' to the PostNew class. What this
+    // handleSubmit does is check whether everything in the form is valid & ok
+    // to be submitted, only then it will go ahead and call the
+    // callback 'this.onSubmit.bind(this)' in the below form.
+    // .bind(this) is done to make sure 'this' is also available in the onSubmit
+    // function.
+
     return (
       <div>
-        <div className="text-xs-right">
-          <Link className="btn btn-primary" to="/">
-            Back to Index
-          </Link>
-        </div>
-        <form>
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             name="title"
             label="Title"
@@ -46,9 +54,13 @@ class PostNew extends Component {
             component={this.renderField}
             placeholder="Content"
           />
+          <button type="submit" className="btn btn-primary">Submit</button>
+          <Link className="btn btn-primary" to="/">
+            Cancel
+          </Link>
         </form>
       </div>
-    )
+    );
   }
 }
 
