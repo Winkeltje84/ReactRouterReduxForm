@@ -13,7 +13,7 @@ class PostNew extends Component {
           type="text"
           placeholder={field.placeholder}
         />
-        <p style={{color:'red'}}>{field.meta.error}</p>
+        <p style={{color:'red'}}>{field.meta.touched? field.meta.error: ""}</p>
       </div>
     )
   }
