@@ -59,9 +59,7 @@ class PostNew extends Component {
             placeholder="Content"
           />
           <button type="submit" className="btn btn-primary">Submit</button>
-          <Link className="btn btn-primary" to="/">
-            Cancel
-          </Link>
+          <Link className="btn btn-danger" to="/">Cancel</Link>
         </form>
       </div>
     );
