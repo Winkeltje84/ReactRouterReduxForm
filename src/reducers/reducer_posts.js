@@ -1,8 +1,13 @@
-import { FETCH_POSTS, FETCH_POST } from '../actions/index'
+import { FETCH_POSTS, FETCH_POST, DELETE_POST } from '../actions/index'
 import _ from 'lodash'
 
 export default function(state = {}, action) {
   switch (action.type) {
+    case DELETE_POST:
+      return _.omit(state, action.payload); // look at state object, if it has
+      // a key with the id passed on as payload, then drop it & return the new
+      // object --> this will make sure this is immediatly dropped &
+      // will make the application faster
     case FETCH_POST:
       // const post = action.payload.data;    // getting data from api & setting it to post
       // const newState = { ...state };       // creating a new state

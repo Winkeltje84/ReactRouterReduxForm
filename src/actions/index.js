@@ -44,6 +44,7 @@ export function deletePost(id, callback) {
 
   return {
     type: DELETE_POST,
-    payload: request
+    payload: id
+    // we ONLY need to send the id to the DELETE_POST reducer
   }
 }
