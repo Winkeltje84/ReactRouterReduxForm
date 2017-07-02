@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // Route determines what is shown when a certain url is requested
 import promise from 'redux-promise'
 
+import ShowPost from './components/post_show'
 import PostIndex from './components/post_index'
 import PostNew from './components/post_new'
 import reducers from './reducers';
@@ -19,6 +20,9 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route path="/posts/new" component={PostNew}/>
+          <Route path="/posts/:id" component={ShowPost}/>
+          // this route should be second to make sure 'new' is not seen
+          // as an 'id' that is provided by the user
           <Route path="/" component={PostIndex}/>
         </Switch>
       </div>
