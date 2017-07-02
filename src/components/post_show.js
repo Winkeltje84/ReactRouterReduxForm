@@ -9,12 +9,25 @@ class PostShow extends Component {
   }
 
   render() {
-    return (
-      <div>
-        Show Posts here...
-      </div>
-    );
-  };
+    if (!this.props.post) {
+      return <div>Loading...</div>
+    }
+    else {
+      return (
+        <div>
+          <h3>Title: {this.props.post.title}</h3>
+          <h6>Categories: {this.props.post.categories}</h6>
+          <p>Content: {this.props.post.content}</p>
+        </div>
+      );
+    }
+  }
 }
 
-export default connect(null, { fetchPost })(PostShow);
+function mapStateToProps({ posts }, ownProps) {
+  return { post: posts[ownProps.match.params.id]}
+}
+// the second argument of mapStateToProps = ownProps  (naming by convention)
+// ownProps will be the props passed into PostShow, besides the original state
+
+export default connect(mapStateToProps, { fetchPost })(PostShow);
