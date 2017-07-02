@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class PostShow extends Component {
   componentDidMount() {
-    const id = this.props.match.params.id;
+    const { id } = this.props.match.params;
     this.props.fetchPost(id);
   }
 

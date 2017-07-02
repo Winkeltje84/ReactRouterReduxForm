@@ -4,11 +4,14 @@ import _ from 'lodash'
 export default function(state = {}, action) {
   switch (action.type) {
     case FETCH_POST:
-      const post = action.payload.data;    // getting data from api & setting it to post
-      const newState = { ...state };       // creating a new state
-      newState[post.id] = post;            // adding post to the state with key of its id
-      console.log(newState);
-      return newState;
+      // const post = action.payload.data;    // getting data from api & setting it to post
+      // const newState = { ...state };       // creating a new state
+      // newState[post.id] = post;            // adding post to the state with key of its id
+      // console.log(newState);
+      // return newState;
+
+      // below is ES6 equivalent to above ES5
+      return { ...state, [action.payload.data.id]: action.payload.data };
 
     case FETCH_POSTS:
       const new_state =  _.mapKeys(action.payload.data, 'id')
